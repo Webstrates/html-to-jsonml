@@ -1,0 +1,29 @@
+{
+  "name": "html-to-jsonml",
+  "version": "0.0.1",
+  "description": "parse5-based library for converting JsonML to HTML.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Webstrates/html-to-jsonml.git"
+  },
+  "keywords": [
+    "jsonml",
+    "json",
+    "html",
+    "parse5",
+    "webstrates"
+  ],
+  "author": "Kristian Antonsen",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Webstrates/html-to-jsonml/issues"
+  },
+  "homepage": "https://github.com/Webstrates/html-to-jsonml#readme",
+  "dependencies": {
+    "parse5": "^4.0.0"
+  }
+}
