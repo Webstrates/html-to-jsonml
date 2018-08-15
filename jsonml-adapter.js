@@ -16,15 +16,15 @@ exports.createCommentNode = data => [ '!', data ];
 
 exports.appendChild = (parentNode, newNode) => {
 		parentMap.set(newNode, parentNode);
-		if (Array.isArray(parentNode)) parentNode.push(newNode);
 		else parentNode.push(newNode);
 };
 
-exports.insertBefore = (parentNode, newNode, referenceNode) => { 
-	throw new Error('insertBefore not implemented');
+exports.insertBefore = (parentNode, newNode, referenceNode) => {
+	const referenceNodeIndex = parentNode.findIndex(el => el === referenceNode);
+	parentNode.splice(referenceNodeIndex, 0, newNode);
 };
 
-exports.setTemplateContent = (templateElement, contentElement) => 
+exports.setTemplateContent = (templateElement, contentElement) =>
 	templateElement.concat(contentElement);
 
 exports.getTemplateContent = templateElement => templateElement;
@@ -50,7 +50,7 @@ exports.insertTextBefore = (parentNode, text, referenceNode) => {
 	}
 };
 
-exports.adoptAttributes = (recipient, attrArray) => 
+exports.adoptAttributes = (recipient, attrArray) =>
 	attrArray.forEach(({ name, value }) => recipient[1][name] = value);
 
 exports.getFirstChild = node => { throw new Error('getFirstChild not implemented'); };
