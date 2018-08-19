@@ -16,7 +16,7 @@ exports.createCommentNode = data => [ '!', data ];
 
 exports.appendChild = (parentNode, newNode) => {
 		parentMap.set(newNode, parentNode);
-		else parentNode.push(newNode);
+		parentNode.push(newNode);
 };
 
 exports.insertBefore = (parentNode, newNode, referenceNode) => {
