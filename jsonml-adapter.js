@@ -3,13 +3,18 @@
 // Map from elements to their parents.
 const parentMap = new Map();
 
+// Map from elements to their namespaceURI.
+const namespaceMap = new Map();
+
 exports.createDocument = () => [];
 exports.createDocumentFragment = () => [];
 
 exports.createElement = (tagName, namespaceURI, attrArray) => {
 	const attrs = {};
 	attrArray.forEach(({ name, value }) => attrs[name] = value);
-	return [ tagName, attrs ];
+	const node = [ tagName, attrs ];
+	namespaceMap.set(node, namespaceURI);
+	return node;
 };
 
 exports.createCommentNode = data => [ '!', data ];
@@ -58,4 +63,4 @@ exports.getChildNodes = node => { throw new Error('getChildNodes not implemented
 exports.getParentNode = node => parentMap.get(node);
 exports.getAttrList = element => typeof element[1] === 'object' ? element[1] : {};
 exports.getTagName = element => element[0];
-exports.getNamespaceURI = element => 'http://www.w3.org/1999/xhtml';
+exports.getNamespaceURI = element => namespaceMap.get(element);
