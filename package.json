@@ -1,6 +1,6 @@
 {
   "name": "html-to-jsonml",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "parse5-based library for converting JsonML to HTML.",
   "main": "index.js",
   "scripts": {

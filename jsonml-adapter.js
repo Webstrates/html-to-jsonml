@@ -11,7 +11,7 @@ exports.createDocumentFragment = () => [];
 
 exports.createElement = (tagName, namespaceURI, attrArray) => {
 	const attrs = {};
-	attrArray.forEach(({ name, value }) => attrs[name] = value);
+	attrArray.forEach(({ name, value }) => attrs[name] = value.replace(/"/g, '&quot;'));
 	const node = [ tagName, attrs ];
 	namespaceMap.set(node, namespaceURI);
 	return node;
